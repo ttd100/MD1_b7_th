@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doRedy()">
+<img id="emny" src="img/img.png" style="position:absolute;left:0;top:0;"height="1000"
+width="1000"/>
+<script>
+    function diLen() {
+        let elemen = document.getElementById('emny');
+        elemen.style.top = parseInt(elemen.style.top)-100+'px';
+    }
+    function diXuong() {
+        var elemen = document.getElementById('emny');
+        elemen.style.top = parseInt(elemen.style.top)+100+'px';
+    }
+    function sangTrai(){
+        var elemen = document.getElementById('emny');
+        elemen.style.left = parseInt(elemen.style.left) -100 +'px';
+    }
+    function sangPhai() {
+        var elemen = document.getElementById('emny');
+        elemen.style.left = parseInt(elemen.style.left) +100 +'px';
+    }
+    function moveselection(evt){
+        switch (evt.keyCode) {
+            case 37:
+                sangTrai();
+                break;
+            case 39:
+                sangPhai();
+                break;
+            case 38:
+                diLen();
+                break;
+            case 40:
+                diXuong();
+                break;
+        }
+    }
+    function doRedy() {
+        window.addEventListener('keydown',moveselection);
+    }
+</script>
+</body>
+</html>
